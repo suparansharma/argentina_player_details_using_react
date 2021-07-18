@@ -13,12 +13,15 @@ const Player = (props) => {
             </div>
 
             <div>
-            <h3 className="PRODUCT-NAME">{name}</h3>
+            <p><small>ID:{id}</small></p>
             <br />
-            <p><small>BY:{seller}</small></p>
+            <h3 className="PLAYER-NAME">{name}</h3>
             <br />
-            <p><small>${price}</small></p>
-            <p><small>Available {stock} Pice - Order soon</small></p>
+           
+            <p><small>club:{club}</small></p>
+            <p><small>gender:{gender}</small></p>
+            <p><small>club:{club}</small></p>
+            <p><small>salary: {salary} </small></p>
             <button
              className="main-button"
              onClick={()=>props.handleAddPlayer(props.player)}
