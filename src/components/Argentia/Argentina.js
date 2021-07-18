@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Detail from '../Detail/Detail';
 import Player from '../Player/Player';
+import './Argentina.css'
 const Argentina = () => {
     const [players,setPlayer]=useState([]);
     const [detail,setDetail] = useState([]);
