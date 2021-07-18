@@ -7,17 +7,14 @@ const Player = (props) => {
     
         const {id,name,club,Position,gender,salary,image}=props.player;
     return (
-        <div className="PRODUCT">
-            <div>
+        <div className="PLAYER">
+            <div className="PLAYER-IMG">
             <img src={image} alt="" />
             </div>
 
             <div>
             <p><small>ID:{id}</small></p>
-            <br />
             <h3 className="PLAYER-NAME">{name}</h3>
-            <br />
-           
             <p><small>club:{club}</small></p>
             <p><small>gender:{gender}</small></p>
             <p><small>club:{club}</small></p>
