@@ -6,6 +6,7 @@ import './Argentina.css'
 const Argentina = () => {
     const [players,setPlayer]=useState([]);
     const [detail,setDetail] = useState([]);
+    const [team,setTeam] = useState([]);
 
     const handleAddPlayer = (player)=>{
         
@@ -19,6 +20,12 @@ const Argentina = () => {
         .then(data=>setPlayer(data))
         .catch(error=>console.log(error))
       },[])
+
+
+      const addMember = (name) =>{
+        setTeam([...team,name]);
+      }
+
   
     return (
         <div className= "Team-Container">
@@ -32,15 +39,24 @@ const Argentina = () => {
                 players.map(pd=>
                      <Player
                      handleAddPlayer = { handleAddPlayer}
-                     player={pd}>
+                     player={pd}  addMember={addMember}>
 
                      </Player>)
             }
+
+        
         
 
         </div>
         <div className="Details-Container">
             {<Detail detail={detail}></Detail>}
+
+            <h1>Team members</h1>
+            <ul>
+                {
+                    team.map(m => <li>{m}</li>)
+                }
+            </ul>
         
         </div>
         

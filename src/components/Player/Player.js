@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import './Player.css'
@@ -6,6 +6,9 @@ import './Player.css'
 const Player = (props) => {
     
         const {id,name,club,Position,gender,salary,image}=props.player;
+        const addMember = props.addMember;
+        const [clubName,setClubName]= useState();
+        const showClubName =() =>setClubName(club);
     return (
         <div className="PLAYER">
             <div className="PLAYER-IMG">
@@ -15,15 +18,21 @@ const Player = (props) => {
             <div>
             <p><small>ID:{id}</small></p>
             <h3 className="PLAYER-NAME">{name}</h3>
-            <p><small>club:{club}</small></p>
+            <p><small>Position:{Position}</small></p>
             <p><small>gender:{gender}</small></p>
-            <p><small>club:{club}</small></p>
+            {/* <p><small>club:{club}</small></p> */}
             <p><small>salary: {salary} </small></p>
+            <p><small>club:{clubName}</small></p>
             <button
              className="main-button"
              onClick={()=>props.handleAddPlayer(props.player)}
              >
-             <FontAwesomeIcon icon={faUserPlus} />Add people</button>
+            Show</button>
+
+             <button onClick={showClubName}> Show</button>
+
+             <button onClick={()=>addMember(name)} > <FontAwesomeIcon icon={faUserPlus} /> Add member</button>
+
             </div>
            
         </div>
